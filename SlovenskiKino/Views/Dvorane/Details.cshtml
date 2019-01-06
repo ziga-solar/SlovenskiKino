@@ -1,0 +1,54 @@
+﻿@model SlovenskiKino.Models.InfoOdvoranah
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InfoOdvoranah</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dvorana)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dvorana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SteviloSedezov)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SteviloSedezov)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SteviloVrst)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SteviloVrst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InvalidskiSedezi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InvalidskiSedezi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Podpora3D)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Podpora3D)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdKinematografNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdKinematografNavigation.IdKinematograf)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdInfo">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

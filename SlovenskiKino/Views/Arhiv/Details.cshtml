@@ -1,0 +1,48 @@
+﻿@model SlovenskiKino.Models.ArhivFilmov
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ArhivFilmov</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SlovenskiNaslov)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SlovenskiNaslov)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AngleskiNaslov)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AngleskiNaslov)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Zanr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Zanr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dolzina)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dolzina)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdFilma">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

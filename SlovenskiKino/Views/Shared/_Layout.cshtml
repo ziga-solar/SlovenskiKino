@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SlovenskiKino</title>
+    <title>@ViewData["Title"] - Slovenski Kino</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,13 +26,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">SlovenskiKino</a>
+                <a asp-area="" asp-controller="Aktualno" asp-action="Index" class="navbar-brand">Slovenski Kino</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Aktualno" asp-action="Index">Aktualno</a></li>
+                    <li><a asp-area="" asp-controller="Arhiv" asp-action="Index">Arhiv</a></li>
+                    <li><a asp-area="" asp-controller="Dvorane" asp-action="Index">Dvorane</a></li>
+                    <li><a asp-area="" asp-controller="Kino" asp-action="Index">Kino</a></li>
+                    <li><a asp-area="" asp-controller="Napovednik" asp-action="Index">Napovednik</a></li>
                 </ul>
             </div>
         </div>
