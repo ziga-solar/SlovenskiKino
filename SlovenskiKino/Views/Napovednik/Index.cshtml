@@ -4,62 +4,93 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    .edits {
+        text-align: center;
+    }
 
+        .edits td {
+            width: 200px;
+            height: 20px;
+        }
+
+    .active-title {
+        text-align: center;
+        font-size: 120%;
+        font-weight:bold;
+        color:darkblue;
+    }
+
+    .movie-title {
+        padding-bottom =20px;
+    }
+
+    .image {
+        margin: 10px;
+        width: 300px;
+        height: 150px;
+        vertical-align:central;
+    }
+
+    .delete {
+        color: dimgray;
+    }
+
+        .delete:hover {
+            color: black;
+        }
+
+    .summary {
+        width = 150px;
+    }
+    .datum{
+        color: darkslategray;
+        font-weight: bold;
+        font-size: 150%;
+        text-align:center;
+        margin: auto auto;
+    }
+</style>
+
+<h2>Filmi</h2>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Dodaj</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.SlovenskiNaslov)
+            <th class=" title">
+                <!--@Html.DisplayNameFor(model => model.SlovenskiNaslov)-->
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AngleskiNaslov)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Zanr)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dolzina)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NaSporeduOd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdPodjetjaNavigation)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SlovenskiNaslov)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AngleskiNaslov)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zanr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dolzina)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NaSporeduOd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPodjetjaNavigation.IdPodjetja)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdNapoved">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdNapoved">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdNapoved">Delete</a>
-            </td>
-        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="image">
+                    <img src="~/images/350x150.png" width="300" height="150" />
+                </td>
+                <td class="content">
+                    <table class="edits">
+                        <tr>
+                            <td colspan="2" class="movie-title">
+                                <text class="active-title">@Html.DisplayFor(modelItem => item.SlovenskiNaslov)</text>
+                            </td>
+                        </tr>
+                        <td>
+                        <tr><td><a asp-action="Edit" asp-route-id="@item.IdNapoved">Edit</a></td></tr>
+                        <tr><td><a asp-action="Details" asp-route-id="@item.IdNapoved">Details</a></td></tr>
+                        <tr><td class="delete"><a asp-action="Delete" asp-route-id="@item.IdNapoved">Delete</a></td></tr>
+                    </td>
+    </table>
+    </td>
+    <td class="datum">@Html.DisplayFor(modelItem => item.NaSporeduOd)</td>
+    <td class="summary">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur, tortor ac tincidunt faucibus, quam enim mattis ipsum, a porta arcu orci quis velit. Pellentesque gravida malesuada ultrices. Donec sit amet consectetur nibh. Nulla a lorem tincidunt, rutrum neque sit amet, suscipit lacus. Phasellus erat lectus, aliquet a bibendum et, lacinia sit amet enim.
+    </td>
+
+    </tr>
 }
-    </tbody>
-</table>
+        </tbody>
+        </table>

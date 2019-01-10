@@ -4,61 +4,78 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
 
+<style>
+    .edits{
+        text-align: center;
+
+    }
+    .edits td{
+        width: 200px;
+        height: 20px;
+    }
+    .active-title {
+        text-align: center;
+        font-size: 150%;
+    }
+    .movie-title{
+        padding-bottom=20px;
+    }
+    .image{
+        margin:10px;
+        width: 300px;
+        height: 150px;
+    }
+    .delete{
+        color:dimgray;
+    }
+    .delete:hover{
+        color:black;
+    }
+    .summary{
+        width = 150px;
+    }
+
+    
+</style>
+
+<h2>Filmi</h2>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Dodaj</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                Naslov v Slovenščini<!--@Html.DisplayNameFor(model => model.SlovenskiNaslov)-->
+            <th class=" title">
+                <!--@Html.DisplayNameFor(model => model.SlovenskiNaslov)-->
             </th>
-            <th>
-                Naslov v Angleščini<!--@Html.DisplayNameFor(model => model.AngleskiNaslov)-->
-            </th>
-            <th>
-                Žanr<!--@Html.DisplayNameFor(model => model.Zanr)-->
-            </th>
-            <th>
-                Dolžina (min)<!--@Html.DisplayNameFor(model => model.Dolzina)-->
-            </th>
-            <th>
-                Na sporedu od<!--@Html.DisplayNameFor(model => model.NaSporeduOd)-->
-            </th>
-            <th>
-                <!--@Html.DisplayNameFor(model => model.IdPodjetjaNavigation)-->
-            </th>
-            <th></th>
         </tr>
         </thead>
-        <tbody>
-    @foreach (var item in Model) {
+    <tbody>
+        @foreach (var item in Model)
+        {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SlovenskiNaslov)
+                <td class="image">
+                    <img src="~/images/350x150.png" width="300" height="150" />
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AngleskiNaslov)
+                <td class="content">
+                    <table class="edits">
+                        <tr>
+                            <td colspan="2" class="movie-title">
+                                <text class="active-title">@Html.DisplayFor(modelItem => item.SlovenskiNaslov)</text>
+                            </td>
+                        </tr>
+                        <td>
+                        <tr><td><a asp-action="Edit" asp-route-id="@item.IdAktualenFilm">Edit</a></td></tr>
+                        <tr><td><a asp-action="Details" asp-route-id="@item.IdAktualenFilm">Details</a></td></tr>
+                        <tr><td class="delete"><a asp-action="Delete" asp-route-id="@item.IdAktualenFilm">Delete</a></td></tr>
+                        </td>
+                </table>
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Zanr)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dolzina)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NaSporeduOd)
-                </td>
-                <td>
-                    <!--@Html.DisplayFor(modelItem => item.IdPodjetjaNavigation.IdPodjetja)-->
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdAktualenFilm">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdAktualenFilm">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdAktualenFilm">Delete</a>
-                </td>
+<td class="summary">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur, tortor ac tincidunt faucibus, quam enim mattis ipsum, a porta arcu orci quis velit. Pellentesque gravida malesuada ultrices. Donec sit amet consectetur nibh. Nulla a lorem tincidunt, rutrum neque sit amet, suscipit lacus. Phasellus erat lectus, aliquet a bibendum et, lacinia sit amet enim. Suspendisse tristique luctus nisl. Quisque lorem eros, pulvinar sit amet tortor ut, laoreet cursus diam. Aliquam ut faucibus ipsum. In bibendum vehicula magna eget gravida. Sed sodales lacus vitae laoreet rutrum. Nam scelerisque risus ac tellus imperdiet elementum. Nunc auctor tempor libero vitae malesuada. Donec id nibh quis nunc interdum sollicitudin non quis urna. Integer eleifend felis a purus rhoncus mattis.
+</td>
+
             </tr>
     }
         </tbody>
